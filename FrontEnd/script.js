@@ -7,7 +7,6 @@ function loadData(records = []) {
 		table_data += `<tr>`;
 		table_data += `<td>${records[i].name}</td>`;
 		table_data += `<td>${records[i].age}</td>`;
-		table_data += `<td>${records[i].salary}</td>`;
 		table_data += `<td>${records[i].city}</td>`;
 		table_data += `<td>`;
 		table_data += `<a href="edit.html?id=${records[i]._id}"><button class="btn btn-primary">Edit</button></a>`;
@@ -47,10 +46,9 @@ function getDataById(id) {
 function postData() {
 	var name = document.getElementById("name").value;
 	var age = document.getElementById("age").value;
-	var salary = document.getElementById("salary").value;
 	var city = document.getElementById("city").value;
 	
-	data = {name: name, age: age, salary: salary, city: city};
+	data = {name: name, age: age, city: city};
 	
 	fetch(api_url, {
 		method: "POST",
@@ -73,10 +71,9 @@ function putData() {
 	var _id = document.getElementById("id").value;
 	var name = document.getElementById("name").value;
 	var age = document.getElementById("age").value;
-	var salary = document.getElementById("salary").value;
 	var city = document.getElementById("city").value;
 	
-	data = {_id: _id, name: name, age: age, salary: salary, city: city};
+	data = {_id: _id, name: name, age: age, city: city};
 	
 	fetch(api_url, {
 		method: "PUT",
